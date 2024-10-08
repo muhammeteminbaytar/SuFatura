@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/calculationFragment"
+        android:icon="@drawable/baseline_water_drop_24"
+        android:title="sayaç" />
+    <item
+        android:id="@+id/customerListFragment"
+        android:icon="@drawable/baseline_person_24"
+        android:title="kişiler" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="ayarlar" />
+</menu>
