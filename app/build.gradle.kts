@@ -4,6 +4,7 @@ plugins {
     id("kotlin-kapt")
     alias(libs.plugins.hilt)
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -84,6 +85,14 @@ dependencies {
 
     // Coroutine Test
     testImplementation(libs.kotlinx.coroutines.test)
+
+    implementation (libs.androidx.camera.camera2)
+    implementation (libs.androidx.camera.lifecycle)
+    implementation (libs.androidx.camera.view)
+
+    implementation(platform(libs.firebase.bom))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation (libs.firebase.ml.vision)
 }
 
 kapt {
