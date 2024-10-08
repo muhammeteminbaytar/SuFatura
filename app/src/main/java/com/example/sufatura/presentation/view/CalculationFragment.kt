@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -65,7 +66,7 @@ class CalculationFragment : Fragment() {
         }
 
         viewModel.ocrResult.observe(viewLifecycleOwner) { result ->
-            Toast.makeText(requireContext(), "OCR Sonucu: $result", Toast.LENGTH_LONG).show()
+            fragmentCalculationBinding.meterReadingInput.text = Editable.Factory.getInstance().newEditable(result)
         }
 
         return fragmentCalculationBinding.root
