@@ -9,7 +9,18 @@
         android:id="@+id/calculationFragment"
         android:name="com.example.sufatura.presentation.view.CalculationFragment"
         android:label="fragment_calculation"
-        tools:layout="@layout/fragment_calculation" />
+        tools:layout="@layout/fragment_calculation">
+        <action
+            android:id="@+id/action_calculationFragment_to_resultFragment"
+            app:destination="@id/resultFragment">
+            <argument
+                android:name="customerNumber"
+                app:argType="string" />
+            <argument
+                android:name="meterReading"
+                app:argType="string" />
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.sufatura.presentation.view.SettingsFragment"
@@ -20,4 +31,17 @@
         android:name="com.example.sufatura.presentation.view.CustomerListFragment"
         android:label="fragment_customer_list"
         tools:layout="@layout/fragment_customer_list" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.sufatura.presentation.view.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="customerNumber"
+            app:argType="string" />
+        <argument
+            android:name="meterReading"
+            app:argType="string" />
+    </fragment>
+
 </navigation>
