@@ -33,5 +33,23 @@ class MainActivity : AppCompatActivity() {
 
         activityMainBinding.bottomBar.setupWithNavController(navController)
 
+        activityMainBinding.bottomBar.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.calculationFragment -> {
+                    navController.navigate(R.id.calculationFragment)
+                    true
+                }
+                R.id.customerListFragment -> {
+                    navController.navigate(R.id.customerListFragment)
+                    true
+                }
+                R.id.settingsFragment -> {
+                    navController.navigate(R.id.settingsFragment)
+                    true
+                }
+                else -> false
+            }
+        }
+
     }
 }
