@@ -46,9 +46,9 @@ class CalculationFragment : Fragment() {
 
         fragmentCalculationBinding.submitButton.setOnClickListener {
             val customerNumber = fragmentCalculationBinding.customerNumberInput.text.toString()
-            val meterReading = fragmentCalculationBinding.meterReadingInput.text.toString()
+            val meterReading = fragmentCalculationBinding.meterReadingInput.text.toString().toInt()
 
-            if (customerNumber.isBlank() || meterReading.isBlank()) {
+            if (customerNumber.isBlank()) {
                 Toast.makeText(requireContext(), "Lütfen tüm alanları doldurun", Toast.LENGTH_SHORT)
                     .show()
             } else {

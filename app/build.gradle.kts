@@ -73,6 +73,8 @@ dependencies {
     implementation(libs.material.v1120)
 
     implementation(libs.androidx.room.runtime)
+    implementation (libs.androidx.room.ktx.v250)
+
 
     testImplementation(libs.androidx.core.v140)
     testImplementation(libs.androidx.rules)

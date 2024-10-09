@@ -1,7 +1,5 @@
 package com.example.sufatura.presentation.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.sufatura.data.local.SettingsDao
@@ -11,17 +9,17 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SettingsViewModel @Inject constructor(
+class MainViewModel @Inject constructor(
     private val settingsDao: SettingsDao
 ) : ViewModel() {
 
-    private val _tariffsLiveData = MutableLiveData<List<Tariff>>()
-    val tariffsLiveData: LiveData<List<Tariff>> get() = _tariffsLiveData
-
-    fun getAllTariffs() {
+    fun checkAndInsertDefaultTariffs() {
         viewModelScope.launch {
-            val tariffs = settingsDao.getAllTariffs()
-            _tariffsLiveData.postValue(tariffs)
+            if (settingsDao.getTariffCount() == 0) {
+                settingsDao.insertTariff(Tariff( startLimit = 0, endLimit =  100, price = 2))
+                settingsDao.insertTariff(Tariff( startLimit = 101, endLimit = 500, price = 5))
+                settingsDao.insertTariff(Tariff( startLimit = 501, endLimit = -1, price = 10))
+            }
         }
     }
 }

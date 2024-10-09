@@ -27,6 +27,7 @@ hiltCompiler = "1.2.0"
 materialVersion = "1.12.0"
 mockk = "1.12.0"
 navigationFragmentKtx = "2.7.3"
+roomKtxVersion = "2.5.0"
 workRuntimeKtx = "2.9.0"
 retrofit = "2.9.0"
 converterGson = "2.9.0"
@@ -52,6 +53,7 @@ androidx-junit-v113 = { module = "androidx.test.ext:junit", version.ref = "andro
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCommon" }
+androidx-room-ktx-v250 = { module = "androidx.room:room-ktx", version.ref = "roomKtxVersion" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomCommon" }
 androidx-rules = { module = "androidx.test:rules", version.ref = "coreVersion" }
 androidx-runner = { module = "androidx.test:runner", version.ref = "coreVersion" }
